@@ -142,7 +142,8 @@ function Signup() {
               <FormControl id="pic">
                 <FormLabel textAlign={"right"}>صورة شخصية</FormLabel>
                 <Input
-                  type="file"
+                  // type="file"
+                  type="hidden"
                   name="pic"
                   // value={userData.email}
                   onChange={(e: any) => setPic(e.target.files[0])}
