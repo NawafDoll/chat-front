@@ -140,7 +140,7 @@ export function Slide(props: any) {
                 <ChatLoading />
               ) : (
                 <Box mt={"5px"} padding={"5px"}>
-                  {searchRes.map((user) => {
+                  {searchRes.map((user: any) => {
                     return (
                       <Box
                         // display={!user ? "block" : "hidden"}
@@ -167,7 +167,7 @@ export function Slide(props: any) {
                           mr={2}
                           size={"sm"}
                           name={user.username}
-                          src={`https://chatback-api.onrender.com/${user.pic}`}
+                          src={user.pic.url}
                         />
                         <Box>
                           <Text color={"white"}>{user.username}</Text>

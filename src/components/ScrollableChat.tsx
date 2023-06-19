@@ -32,7 +32,7 @@ function ScrollableChat({ messages }: any) {
                     mr={0}
                     size={"sm"}
                     name={m.sender.username}
-                    src={`https://chatback-api.onrender.com/${m.sender.pic}`}
+                    src={m.sender.pic.url}
                   />
                 </Tooltip>
               )}

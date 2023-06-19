@@ -181,7 +181,7 @@ function GroupChatModal({ children }: any) {
                       mr={2}
                       size={"sm"}
                       name={user.username}
-                      src={`https://chatback-api.onrender.com/${user.pic}`}
+                      src={user.pic.url}
                     />
                     <Box>
                       <Text color={"white"}>{user.username}</Text>

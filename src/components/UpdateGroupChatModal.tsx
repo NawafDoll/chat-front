@@ -269,7 +269,7 @@ function UpdateGroupChatModal({
                           mr={2}
                           size={"sm"}
                           name={us.username}
-                          src={`https://chatback-api.onrender.com/${us.pic}`}
+                          src={us.pic.url}
                         />
                         <Box>
                           <Text color={"white"}>{us.username}</Text>

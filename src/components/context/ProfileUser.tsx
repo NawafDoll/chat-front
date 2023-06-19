@@ -30,12 +30,7 @@ function ProfileUser() {
   };
   return (
     <>
-      <Avatar
-        size={"sm"}
-        src={`https://chatback-api.onrender.com/${user.pic}`}
-        cursor={"pointer"}
-        onClick={onOpen}
-      />
+      <Avatar size={"sm"} src={user.pic} cursor={"pointer"} onClick={onOpen} />
       <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -43,11 +38,7 @@ function ProfileUser() {
           <ModalCloseButton />
           <ModalBody>
             <VStack>
-              <Avatar
-                name={user.username}
-                size={"2xl"}
-                src={`https://chatback-api.onrender.com/${user.pic}`}
-              />
+              <Avatar name={user.username} size={"2xl"} src={user.pic} />
               <Heading>{user.username}</Heading>
               <Text>{user.email}</Text>
             </VStack>
