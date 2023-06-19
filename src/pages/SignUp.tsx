@@ -32,7 +32,9 @@ function Signup() {
   const navigate = useNavigate();
   const toast = useToast();
   const [err, seterr] = useState("");
-  const [pic, setPic] = useState("");
+  const [pic, setPic] = useState<any>(
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHwAAAB8CAMAAACcwCSMAAAAMFBMVEXBx9D///+9w83g4+fJztbz9PbQ1Nvp6+7FytP4+fr8/P3a3ePd4OXu8PLj5unM0dlzI2nQAAAFBUlEQVRogcWbWZKEIBBEERUQUe9/23HtZifLhpj8m4genyAUVQmwji49ynWexaDYLjWIeV7lqF88iBG5Sy8OJGeOzj9FvxDfgAIfV6G4h3VfQYl1bAGf+s1vb/wFtn6qDJdbrskenwtZD657BZNvvuqRz1+GT4YGfmTK+BJc9+/Qh4qtL8DlQOxwW3wofPssfBI/oE+8yI78HLz/EX3i+1fwaavA3ulbuvFJuERCCkRnyS+fgs91yJdmGvzXkeaKCwJcq5roQyo65WPwsTZ6F4+tdhF4C/auBYE3YjMWtj2AN2NH6D5ct2Mz5o86H159nNsa8nBBeBS/RfgXkYMb9EmcDcLIZRwXacQAR2Ju0nCJtkAZO0/Xo4G/lkzBJ/D1YzkCnHXYa5wNHzD2GqIPgau/PegsOPTB+ZZMzDSUANif/QufoH9NrY6nZugR347/wqFZZmJMYud959sHLpFaqMDG2s4/4/WBa2S0JXICW0j/Dc+weeDIWFVlNhSfPxntDUemeDQfCDQin31y4Eg9lh3oXyHpn7HhmvC6JUGdqC04Ug2CDcfGXG/BkXUB9jugXOgLR+a4nwhkBMzaa64zsKPK8eUrJM6JB45EdR7JfFNakOdNNxxaDGGLCRzv/Q3fgB8PBH8PCtXbBYdG54azsdYcs2eHr7R1EBAy04+EiIELeXX48UQG1sP14XvVzKCJ0QK+T14GZp3VR/sx2RhaIVHmOVZCiB2OsWtHuEMdQ2tiSmwHH6nZAv6y7qp2amFwcVh3PT8k2Qr+Ml+r2ILqlkMrw63GijncpZkAB5tOeCDDjZCKefslwdChycABT3keI9hPyJijuNU05yu7bXCKtDlBtN1SlsgjdN6+VDbKwjP8pbhIezL0HQKq35ncMoHjtIUmTI0H/5MPZ2kgBBkLr3on4Iwrdaf3lHgFv7zXdRl3LSvBe3VFie3BC9BdZx/eeGrmtOLJRH1JOI1qoAVOIBtIo6lzCx1FQ+OAnJSAy6X6OsslyEEhC3jmgpTIfBCz6UkysyjG+rNELpkY86sDX50eC7FzK9oiheMeeWUPm9y2SK68IdSmMWXCJx8LVhjFEYgr7RPcVlhyssXPGhDpieH8MQET9idWoZSUevhjfyackWKSjinu5X+M37jlDW3nIIp1vGV5xxYXDp7mKyvatO4Lj3RNjdF2KTbm7G2OcIMndajnjcJY42zwhAZSqSqjKAyhztZW6GVQfLeSwnXT3dQLAk2dSX7JNyv87cwgDraEBxu5/oRoCA+3sP0w1xAe2bz3gnA7ePTYgrsX1wweP7DhuljN4ImjKs5krznPHXjqkI6T9ahqTdf2UE4eT/I+e6W2aytL82zEzJG0Oj2vbcckeyTNXfkp29YpOXHdz0+CY4jOtEibbqCcJYOXjiG6WTxXP+Uz3lnt4gHMvaOYg5/fN94rGYCjp34F87rxfrEUmbrAceN39Zp/cAI8bhymfHR871Xo8cILPWIuCAFvMp4lSTpi3sWs801CQ08vIjBiiYfrY9UtV3PxWtZohtASIV8r2DsvYmxwJWT688s5Yj7z4cWFii510odzYby7cXqUvWBRG+jlVZIu72scpveh7TC8d2z8Rd9foulKGwg8uLLn9fgv14e6/704tWt6tx3ATTkwYZflqPsYvNxqFL5Liv+6JnjqHy9InipeDeVqa3M19NJ0X4qNqe2l2Ed6Ca8DU7mn/gCjpDDFaYkmzAAAAABJRU5ErkJggg=="
+  );
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -48,17 +50,25 @@ function Signup() {
   //   rePassword: "",
   //   pic: pic,
   // });
+
   const handlerSignup = (e: any) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("username", username);
-    formData.append("email", email);
-    formData.append("phone", phone);
-    formData.append("password", password);
-    formData.append("rePassword", rePassword);
-    formData.append("pic", pic);
+    // const formData = new FormData();
+    // formData.append("username", username);
+    // formData.append("email", email);
+    // formData.append("phone", phone);
+    // formData.append("password", password);
+    // formData.append("rePassword", rePassword);
+    // formData.append("pic", pic);
     axios
-      .post("https://chatback-api.onrender.com/user/register", formData)
+      .post("https://chatback-api.onrender.com/user/register", {
+        username: username,
+        email: email,
+        phone: phone,
+        password: password,
+        rePassword: rePassword,
+        pic: pic || "",
+      })
       .then((res) => {
         alert(res.data.message);
         if (res.status >= 200 && res.status < 300) {
@@ -70,10 +80,20 @@ function Signup() {
         seterr(err.response.data.message);
       });
   };
-  // const handlerChange = (e: any) => {
-  //   let value = e.target.value;
-  //   setUserData({ ...userData, [e.target.name]: value });
-  // };
+
+  const handlerPic = (e: any) => {
+    const file = e.target.files[0];
+    setFileToBase(file);
+  };
+
+  const setFileToBase = (file: any) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setPic(reader.result);
+    };
+  };
+
   return (
     <Flex
       //   minH={"50vh"}
@@ -142,11 +162,11 @@ function Signup() {
               <FormControl id="pic">
                 <FormLabel textAlign={"right"}>صورة شخصية</FormLabel>
                 <Input
-                  // type="file"
-                  type="hidden"
+                  placeholder="XX@gmail.com"
+                  type="file"
                   name="pic"
                   // value={userData.email}
-                  onChange={(e: any) => setPic(e.target.files[0])}
+                  onChange={handlerPic}
                 />
               </FormControl>
               {/* <Text>يجب ان تحتوي كلمة المرور احرف صغيرة و كبيرة و ارقام</Text> */}
