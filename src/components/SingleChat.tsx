@@ -141,7 +141,7 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
       };
 
       const { data } = await axios.post(
-        `http://localhost:3336/message/sendfile`,
+        `https://chatback-api.onrender.com/message/sendfile`,
         { image: image, chatId: selectChat._id, content: "" },
         config
       );
@@ -153,7 +153,7 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
       console.log(err);
     }
   };
-  console.log(image);
+
   const handlerPic = (e: any) => {
     const file = e.target.files[0];
     setFileToBase(file);
@@ -217,10 +217,7 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
                   mt={1}
                   name={getSender(user, selectChat.users)}
                   size={"sm"}
-                  src={`https://chatback-api.onrender.com/${getSenderFull(
-                    user,
-                    selectChat.users
-                  )}`}
+                  src={`${getSenderFull(user, selectChat.users[0].pic.url)}`}
                 />
               </Box>
             ) : (
