@@ -152,6 +152,7 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
       console.log(err);
     }
   };
+  console.log(image);
   const typingHandler = (e: any) => {
     setNewMessage(e.target.value);
 
