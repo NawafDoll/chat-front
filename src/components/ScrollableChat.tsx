@@ -7,16 +7,16 @@ import {
   isSameUser,
 } from "./ChatLogics";
 import { ChatState } from "./context/ChatProvider";
-import { Avatar, Image, Text, Tooltip } from "@chakra-ui/react";
+import { Avatar, Box, Image, Text, Tooltip } from "@chakra-ui/react";
+import { DownloadIcon } from "@chakra-ui/icons";
 
 function ScrollableChat({ messages }: any) {
   const { user } = ChatState();
-  // console.log(messages);
+
   return (
     <ScrollableFeed>
       {messages &&
         messages.map((m: any, i: any) => {
-          console.log("senderPis:  " + m.image);
           return (
             <div style={{ display: "flex" }} key={m._id}>
               {(isSameSender(messages, m, i, user.id) ||
@@ -28,18 +28,18 @@ function ScrollableChat({ messages }: any) {
                   //   children={undefined}
                 >
                   <Avatar
-                    mt={"7px"}
-                    mr={1}
+                    mt={"31px"}
+                    mr={0}
                     size={"sm"}
-                    cursor={"pointer"}
                     name={m.sender.username}
                     src={`https://chatback-api.onrender.com/${m.sender.pic}`}
                   />
                 </Tooltip>
               )}
+
               <span
                 style={{
-                  borderRadius: "20px",
+                  // borderRadius: "20px",
                   padding: "5px 15px",
                   maxWidth: "75%",
                   marginLeft: isSameSenderMargin(messages, m, i, user.id),
@@ -53,18 +53,35 @@ function ScrollableChat({ messages }: any) {
                       height={"150px"}
                       autoPlay
                       controls
+                      loop
                       src={`https://chatback-api.onrender.com/${m.image}`}
                     ></video>
-                  ) : (
+                  ) : m.image.includes(".png") ||
+                    m.image.includes(".jpeg") ||
+                    m.image.includes(".jpg") ? (
                     <Image
                       src={`https://chatback-api.onrender.com/${m.image}`}
                       w={"150px"}
                       h={"150px"}
                     />
+                  ) : (
+                    <Box bg={"white"}>
+                      <iframe
+                        src={`https://chatback-api.onrender.com/${m.image}`}
+                        style={{ width: "150px", height: "150px" }}
+                      />
+                      <a
+                        href={`https://chatback-api.onrender.com/${m.image}`}
+                        download
+                        target="_blank"
+                      >
+                        <DownloadIcon />
+                      </a>
+                    </Box>
                   )
                 ) : (
                   <Text
-                    borderRadius="20px"
+                    borderRadius="20px 20px 20px 0px"
                     padding="5px 15px"
                     w="fit-content"
                     backgroundColor={`${

@@ -141,6 +141,7 @@ function Login() {
                 <InputRightElement h={"full"}>
                   <Button
                     variant={"ghost"}
+                    color={"white"}
                     _hover={{
                       color: "black",
                       backgroundColor: "white",

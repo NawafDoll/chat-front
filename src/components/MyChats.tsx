@@ -50,7 +50,7 @@ function MyChats({ fetchAgain }: any) {
         justifyContent={"space-between"}
         alignItems={"center"}
       >
-        <Text color={"black"}>MyCHats</Text>
+        <Text color={"black"}>محادثاتي</Text>
         <GroupChatModal>
           <Button
             display={"flex"}

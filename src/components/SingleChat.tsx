@@ -145,7 +145,6 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
         formData,
         config
       );
-      console.log(data);
       socket.emit("new message", data);
       setMessages([...messages, data]);
       setImage(null);
@@ -186,7 +185,7 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
             px={2}
             w={"100%"}
             display={"flex"}
-            justifyContent={{ base: "space-between" }}
+            justifyContent={{ base: "space-between", md: "right" }}
             alignItems={"center"}
           >
             <IconButton
