@@ -44,6 +44,7 @@ function ProfileUser() {
           <ModalBody>
             <VStack>
               <Avatar
+                name={user.username}
                 size={"2xl"}
                 src={`https://chatback-api.onrender.com/${user.pic}`}
               />
@@ -58,7 +59,7 @@ function ProfileUser() {
                 fontSize={"sm"}
                 fontWeight={600}
                 color={"white"}
-                bg={"red"}
+                colorScheme={"red"}
                 _hover={{
                   bg: "blue.800",
                 }}

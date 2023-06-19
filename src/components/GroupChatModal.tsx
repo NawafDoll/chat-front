@@ -42,6 +42,7 @@ function GroupChatModal({ children }: any) {
       setLoading(true);
       const config = {
         headers: {
+          "Content-type": "application/json",
           authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       };
@@ -61,6 +62,7 @@ function GroupChatModal({ children }: any) {
       });
     }
   };
+  console.log(searchRes);
   const handleSubmit = async () => {
     if (!groupChatName || !selectUsers) {
       toast({
