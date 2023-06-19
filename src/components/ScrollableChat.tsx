@@ -33,7 +33,7 @@ function ScrollableChat({ messages }: any) {
                     size={"sm"}
                     cursor={"pointer"}
                     name={m.sender.username}
-                    src={`https://chat-api-9h8t.onrender.com/${m.sender.pic}`}
+                    src={`https://chatback-api.onrender.com/${m.sender.pic}`}
                   />
                 </Tooltip>
               )}
@@ -53,11 +53,11 @@ function ScrollableChat({ messages }: any) {
                       height={"150px"}
                       autoPlay
                       controls
-                      src={`https://chat-api-9h8t.onrender.com/${m.image}`}
+                      src={`https://chatback-api.onrender.com/${m.image}`}
                     ></video>
                   ) : (
                     <Image
-                      src={`https://chat-api-9h8t.onrender.com/${m.image}`}
+                      src={`https://chatback-api.onrender.com/${m.image}`}
                       w={"150px"}
                       h={"150px"}
                     />

@@ -19,7 +19,7 @@ function MyChats({ fetchAgain }: any) {
         },
       };
       const { data } = await axios.get(
-        `https://chat-api-9h8t.onrender.com/chat`,
+        `https://chatback-api.onrender.com/chat`,
         config
       );
       // console.log(data);

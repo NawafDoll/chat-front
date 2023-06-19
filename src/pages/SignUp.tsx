@@ -58,7 +58,7 @@ function Signup() {
     formData.append("rePassword", rePassword);
     formData.append("pic", pic);
     axios
-      .post("https://chat-api-9h8t.onrender.com/user/register", formData)
+      .post("https://chatback-api.onrender.com/user/register", formData)
       .then((res) => {
         alert(res.data.message);
         if (res.status >= 200 && res.status < 300) {

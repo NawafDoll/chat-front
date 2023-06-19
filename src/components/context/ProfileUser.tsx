@@ -32,7 +32,7 @@ function ProfileUser() {
     <>
       <Avatar
         size={"sm"}
-        src={`https://chat-api-9h8t.onrender.com/${user.pic}`}
+        src={`https://chatback-api.onrender.com/${user.pic}`}
         cursor={"pointer"}
         onClick={onOpen}
       />
@@ -45,7 +45,7 @@ function ProfileUser() {
             <VStack>
               <Avatar
                 size={"2xl"}
-                src={`https://chat-api-9h8t.onrender.com/${user.pic}`}
+                src={`https://chatback-api.onrender.com/${user.pic}`}
               />
               <Heading>{user.username}</Heading>
               <Text>{user.email}</Text>

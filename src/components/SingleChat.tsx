@@ -23,7 +23,7 @@ import io from "socket.io-client";
 import { useDropzone } from "react-dropzone";
 import Dropzone from "react-dropzone";
 
-const ENDPOINT = `https://chat-api-9h8t.onrender.com`;
+const ENDPOINT = `https://chatback-api.onrender.com`;
 let socket: any, selectChatCompare: any;
 
 function SingleChat({ fetchAgain, setFetchAgain }: any) {
@@ -47,7 +47,7 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
         },
       };
       const { data } = await axios.get(
-        `https://chat-api-9h8t.onrender.com/message/${selectChat._id}`,
+        `https://chatback-api.onrender.com/message/${selectChat._id}`,
         config
       );
 
@@ -95,7 +95,7 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
         },
       };
       const { data } = await axios.post(
-        `https://chat-api-9h8t.onrender.com/message`,
+        `https://chatback-api.onrender.com/message`,
         {
           content: newMessage,
           chatId: selectChat._id,
@@ -141,7 +141,7 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
       };
 
       const { data } = await axios.post(
-        `https://chat-api-9h8t.onrender.com/message/sendfile`,
+        `https://chatback-api.onrender.com/message/sendfile`,
         formData,
         config
       );
@@ -203,7 +203,7 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
                   mt={1}
                   name={getSender(user, selectChat.users)}
                   size={"sm"}
-                  src={`https://chat-api-9h8t.onrender.com/${getSenderFull(
+                  src={`https://chatback-api.onrender.com/${getSenderFull(
                     user,
                     selectChat.users
                   )}`}

@@ -67,7 +67,7 @@ function UpdateGroupChatModal({
         },
       };
       const { data } = await axios.put(
-        `https://chat-api-9h8t.onrender.com/chat/groupadd`,
+        `https://chatback-api.onrender.com/chat/groupadd`,
         {
           chatId: selectChat._id,
           userId: user1,
@@ -99,7 +99,7 @@ function UpdateGroupChatModal({
         },
       };
       const { data } = await axios.put(
-        `https://chat-api-9h8t.onrender.com/chat/groupremove`,
+        `https://chatback-api.onrender.com/chat/groupremove`,
         {
           chatId: selectChat._id,
           userId: user1,
@@ -127,7 +127,7 @@ function UpdateGroupChatModal({
         },
       };
       const { data } = await axios.get(
-        `https://chat-api-9h8t.onrender.com/user?search=${search}`,
+        `https://chatback-api.onrender.com/user?search=${search}`,
         config
       );
       setRenameLoading(false);
@@ -166,7 +166,7 @@ function UpdateGroupChatModal({
         },
       };
       const { data } = await axios.put(
-        `https://chat-api-9h8t.onrender.com/chat/grouprename`,
+        `https://chatback-api.onrender.com/chat/grouprename`,
         { chatId: selectChat._id, chatName: groupeChatName },
         config
       );
@@ -269,7 +269,7 @@ function UpdateGroupChatModal({
                           mr={2}
                           size={"sm"}
                           name={us.username}
-                          src={`https://chat-api-9h8t.onrender.com/${us.pic}`}
+                          src={`https://chatback-api.onrender.com/${us.pic}`}
                         />
                         <Box>
                           <Text color={"white"}>{us.username}</Text>

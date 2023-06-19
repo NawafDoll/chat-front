@@ -46,7 +46,7 @@ function GroupChatModal({ children }: any) {
         },
       };
       const { data } = await axios.get(
-        `https://chat-api-9h8t.onrender.com/user?search=${search}`,
+        `https://chatback-api.onrender.com?search=${search}`,
         config
       );
       setLoading(false);
@@ -79,7 +79,7 @@ function GroupChatModal({ children }: any) {
         },
       };
       const { data } = await axios.post(
-        "https://chat-api-9h8t.onrender.com/chat/group",
+        "https://chatback-api.onrender.com/chat/group",
         {
           name: groupChatName,
           users: JSON.stringify(selectUsers.map((user) => user._id)),
@@ -179,7 +179,7 @@ function GroupChatModal({ children }: any) {
                       mr={2}
                       size={"sm"}
                       name={user.username}
-                      src={`https://chat-api-9h8t.onrender.com/${user.pic}`}
+                      src={`https://chatback-api.onrender.com/${user.pic}`}
                     />
                     <Box>
                       <Text color={"white"}>{user.username}</Text>

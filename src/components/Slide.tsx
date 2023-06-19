@@ -56,7 +56,7 @@ export function Slide(props: any) {
         },
       };
       const { data } = await axios.get(
-        `https://chat-api-9h8t.onrender.com/user?search=${search}`,
+        `https://chatback-api.onrender.com/user?search=${search}`,
         config
       );
       setLoading(false);
@@ -86,7 +86,7 @@ export function Slide(props: any) {
         },
       };
       const { data } = await axios.post(
-        `https://chat-api-9h8t.onrender.com/chat`,
+        `https://chatback-api.onrender.com/chat`,
         { userId },
         config
       );
@@ -167,7 +167,7 @@ export function Slide(props: any) {
                           mr={2}
                           size={"sm"}
                           name={user.username}
-                          src={`https://chat-api-9h8t.onrender.com/${user.pic}`}
+                          src={`https://chatback-api.onrender.com/${user.pic}`}
                         />
                         <Box>
                           <Text color={"white"}>{user.username}</Text>

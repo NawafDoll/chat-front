@@ -41,7 +41,7 @@ function Login() {
       },
     };
     axios
-      .post("https://chat-api-9h8t.onrender.com/user/login", userData, config)
+      .post("https://chatback-api.onrender.com/user/login", userData, config)
       .then((res) => {
         // let t:any = localStorage.setItem(res.data.token)
         // setToken(
