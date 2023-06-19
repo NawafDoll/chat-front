@@ -127,24 +127,25 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
   // };
   const selectFile = async (e: any) => {
     e.preventDefault();
-
+    // if('.mp4'||'.mp3'||)
     try {
-      const formData = new FormData();
-      formData.append("image", image);
-      formData.append("chatId", selectChat._id);
-      formData.append("content", image.name);
+      // const formData = new FormData();
+      // formData.append("image", image);
+      // formData.append("chatId", selectChat._id);
+      // formData.append("content", image.name);
       const config: any = {
         headers: {
           authorization: `Bearer ${localStorage.getItem("token")}`,
-          "Content-type": "multipart/form-data",
+          // "Content-type": "multipart/form-data",
         },
       };
 
       const { data } = await axios.post(
-        `https://chatback-api.onrender.com/message/sendfile`,
-        formData,
+        `http://localhost:3336/message/sendfile`,
+        { image: image, chatId: selectChat._id, content: "" },
         config
       );
+      console.log(data);
       socket.emit("new message", data);
       setMessages([...messages, data]);
       setImage(null);
@@ -153,6 +154,19 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
     }
   };
   console.log(image);
+  const handlerPic = (e: any) => {
+    const file = e.target.files[0];
+    setFileToBase(file);
+  };
+
+  const setFileToBase = (file: any) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setImage(reader.result);
+    };
+  };
+
   const typingHandler = (e: any) => {
     setNewMessage(e.target.value);
 
@@ -267,7 +281,7 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
                 name="image"
                 // value={userData.email}
                 ref={inputFileRef}
-                onChange={(e: any) => setImage(e.target.files[0])}
+                onChange={handlerPic}
               />
               <Button
                 mt={"7px"}

@@ -47,34 +47,27 @@ function ScrollableChat({ messages }: any) {
                 }}
               >
                 {m.image !== undefined ? (
-                  m.image.includes(".mp4") || m.image.includes(".mp3") ? (
+                  m.image.url.includes(".mp4") ||
+                  m.image.url.includes(".mp3") ? (
                     <video
                       width={"150px"}
                       height={"150px"}
                       autoPlay
                       controls
                       loop
-                      src={`https://chatback-api.onrender.com/${m.image}`}
+                      src={m.image.url}
                     ></video>
-                  ) : m.image.includes(".png") ||
-                    m.image.includes(".jpeg") ||
-                    m.image.includes(".jpg") ? (
-                    <Image
-                      src={`https://chatback-api.onrender.com/${m.image}`}
-                      w={"150px"}
-                      h={"150px"}
-                    />
+                  ) : m.image.url.includes(".png") ||
+                    m.image.url.includes(".jpeg") ||
+                    m.image.url.includes(".jpg") ? (
+                    <Image src={m.image.url} w={"150px"} h={"150px"} />
                   ) : (
                     <Box bg={"white"}>
                       <iframe
-                        src={`https://chatback-api.onrender.com/${m.image}`}
+                        src={m.image.url}
                         style={{ width: "150px", height: "150px" }}
                       />
-                      <a
-                        href={`https://chatback-api.onrender.com/${m.image}`}
-                        download
-                        target="_blank"
-                      >
+                      <a href={m.image.url} download target="_blank">
                         <DownloadIcon />
                       </a>
                     </Box>
