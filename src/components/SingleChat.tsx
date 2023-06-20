@@ -87,6 +87,7 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
   });
   const sendMessage = async (e: any) => {
     // if (e.key === "Enter" && newMessage) {
+    if (newMessage === "") return;
     socket.emit("stop typing", selectChat._id);
     try {
       const config = {
@@ -129,10 +130,6 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
     e.preventDefault();
     // if('.mp4'||'.mp3'||)
     try {
-      // const formData = new FormData();
-      // formData.append("image", image);
-      // formData.append("chatId", selectChat._id);
-      // formData.append("content", image.name);
       const config: any = {
         headers: {
           authorization: `Bearer ${localStorage.getItem("token")}`,
