@@ -87,6 +87,7 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
   });
   const sendMessage = async (e: any) => {
     // if (e.key === "Enter" && newMessage) {
+    if (image === "" || newMessage === "") return;
     if (newMessage === "") return;
     socket.emit("stop typing", selectChat._id);
     try {
