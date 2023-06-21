@@ -275,6 +275,7 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
                 type="file"
                 name="image"
                 // value={userData.email}
+                bg={!image ? "" : "blue"}
                 ref={inputFileRef}
                 onChange={handlerPic}
               />
