@@ -66,20 +66,19 @@ function ScrollableChat({ messages }: any) {
                     <Box
                       bg={"white"}
                       position={"relative"}
-                      height={"150px"}
-                      width={"150px"}
+                      height={"560px"}
+                      width={"750px"}
+                      overflow={"hidden"}
                     >
                       <iframe
                         src={m.image.url}
-                        // scrolling="no"
+                        scrolling="no"
                         style={{
-                          position: "absolute",
-                          top: "0",
-                          bottom: "0",
-                          left: "0",
-                          right: "0",
-                          width: "100%",
-                          height: "100%",
+                          top: "-230px",
+                          left: "-25px",
+                          position: "relative",
+                          width: "800px",
+                          height: "1600px",
                         }}
                       />
                       <a href={m.image.url} download target="_blank">
