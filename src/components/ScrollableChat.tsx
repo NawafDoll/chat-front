@@ -78,7 +78,7 @@ function ScrollableChat({ messages }: any) {
                           bottom: "0",
                           left: "0",
                           right: "0",
-                          with: "100%",
+                          width: "100%",
                           height: "100%",
                         }}
                       />
