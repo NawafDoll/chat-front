@@ -147,6 +147,7 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
       socket.emit("new message", data);
       setMessages([...messages, data]);
       setImage(null);
+      setNewMessage("");
     } catch (err) {
       console.log(err);
     }
