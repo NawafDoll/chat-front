@@ -48,6 +48,7 @@ function ScrollableChat({ messages }: any) {
               >
                 {m.image !== undefined ? (
                   m.image.url.includes(".mp4") ||
+                  m.image.url.includes(".MP4") ||
                   m.image.url.includes(".mp3") ? (
                     <video
                       width={"150px"}
@@ -63,7 +64,7 @@ function ScrollableChat({ messages }: any) {
                     <Image src={m.image.url} w={"150px"} h={"150px"} />
                   ) : (
                     <Box bg={"white"}>
-                      <iframe
+                      <img
                         src={m.image.url}
                         style={{ width: "150px", height: "150px" }}
                       />
