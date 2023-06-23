@@ -74,11 +74,11 @@ function ScrollableChat({ messages }: any) {
                         src={m.image.url}
                         scrolling="no"
                         style={{
-                          top: "-230px",
-                          left: "-25px",
+                          // top: "-230px",
+                          // left: "-25px",
                           position: "relative",
-                          width: "800px",
-                          height: "1600px",
+                          // width: "800px",
+                          // height: "1600px",
                         }}
                       />
                       <a href={m.image.url} download target="_blank">
