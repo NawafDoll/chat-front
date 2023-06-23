@@ -70,6 +70,8 @@ function ScrollableChat({ messages }: any) {
                           width: "100%",
                           height: "92%",
                           display: "block",
+                          overflow: "hidden",
+                          position: "absolute",
                         }}
                       />
                       <a href={m.image.url} download target="_blank">
