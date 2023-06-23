@@ -66,8 +66,8 @@ function ScrollableChat({ messages }: any) {
                     <Box
                       bg={"white"}
                       position={"relative"}
-                      height={"560px"}
-                      width={"750px"}
+                      height={"150px"}
+                      width={"150px"}
                       overflow={"hidden"}
                     >
                       <iframe
