@@ -63,15 +63,14 @@ function ScrollableChat({ messages }: any) {
                     m.image.url.includes(".jpg") ? (
                     <Image src={m.image.url} w={"150px"} h={"150px"} />
                   ) : (
-                    <Box bg={"white"} overflow={"hidden"}>
+                    <Box bg={"white"}>
                       <iframe
                         src={m.image.url}
                         scrolling="no"
                         style={{
                           overflow: "hidden",
-                          width: "100wh",
-                          height: "100vh",
-                          // overflowX:"n"
+                          width: "150px",
+                          height: "150px",
                         }}
                       />
                       <a href={m.image.url} download target="_blank">
