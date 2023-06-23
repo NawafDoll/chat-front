@@ -67,8 +67,8 @@ function ScrollableChat({ messages }: any) {
                       <iframe
                         src={m.image.url}
                         style={{
-                          width: "100%",
-                          height: "100%",
+                          width: "150px",
+                          height: "150px",
                           display: "block",
                           overflow: "hidden",
 
