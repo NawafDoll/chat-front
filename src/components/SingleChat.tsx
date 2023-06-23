@@ -154,6 +154,7 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
 
   const handlerPic = (e: any) => {
     const file = e.target.files[0];
+    setNewMessage(file.name);
     setFileToBase(file);
   };
 
