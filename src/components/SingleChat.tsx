@@ -305,8 +305,6 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
                     ? sendMessage
                     : selectFile
                 }
-                // type="submit"
-                loadingText="Submitting"
                 size="sm"
                 bg={"blue.400"}
                 color={"white"}
