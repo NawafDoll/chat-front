@@ -51,15 +51,15 @@ function ScrollableChat({ messages }: any) {
                   m.image.url.includes(".MP4") ||
                   m.image.url.includes(".mp3") ? (
                     <video
-                      width={"150px"}
-                      height={"150px"}
+                      width={"130px"}
+                      height={"130px"}
                       controls
                       src={m.image.url}
                     ></video>
                   ) : m.image.url.includes(".png") ||
                     m.image.url.includes(".jpeg") ||
                     m.image.url.includes(".jpg") ? (
-                    <Image src={m.image.url} w={"150px"} h={"150px"} />
+                    <Image src={m.image.url} w={"130px"} h={"130px"} />
                   ) : (
                     <Box bg={"white"}>
                       <iframe
@@ -67,8 +67,8 @@ function ScrollableChat({ messages }: any) {
                         scrolling="no"
                         style={{
                           overflow: "hidden",
-                          width: "150px",
-                          height: "150px",
+                          width: "130px",
+                          height: "130px",
                         }}
                       />
                       <a href={m.image.url} download target="_blank">
@@ -78,9 +78,14 @@ function ScrollableChat({ messages }: any) {
                   )
                 ) : (
                   <Text
-                    borderRadius="20px 20px 20px 0px"
+                    borderRadius={`${
+                      m.sender._id === user.id
+                        ? "20px 20px 0px 20px"
+                        : "20px 20px 20px 0px"
+                    }`}
                     padding="5px 15px"
                     w="fit-content"
+                    boxShadow={"lg"}
                     backgroundColor={`${
                       m.sender._id === user.id ? "#BEE3F8" : "#B9F5D0"
                     }`}
