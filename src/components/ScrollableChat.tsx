@@ -53,9 +53,7 @@ function ScrollableChat({ messages }: any) {
                     <video
                       width={"150px"}
                       height={"150px"}
-                      autoPlay
                       controls
-                      loop
                       src={m.image.url}
                     ></video>
                   ) : m.image.url.includes(".png") ||

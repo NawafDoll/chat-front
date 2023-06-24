@@ -144,11 +144,11 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
         { image: image, chatId: selectChat._id, content: "" },
         config
       );
-      console.log(data);
       socket.emit("new message", data);
       setMessages([...messages, data]);
       setImage(null);
       setNewMessage("");
+      setFetchAgain(fetchAgain);
       setLoading(false);
     } catch (err) {
       setLoading(false);
