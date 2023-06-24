@@ -128,6 +128,7 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
 
   // };
   const selectFile = async (e: any) => {
+    setLoading(true);
     e.preventDefault();
     // if('.mp4'||'.mp3'||)
     try {
@@ -148,7 +149,9 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
       setMessages([...messages, data]);
       setImage(null);
       setNewMessage("");
+      setLoading(false);
     } catch (err) {
+      setLoading(false);
       console.log(err);
     }
   };
@@ -296,6 +299,7 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
 
               <Button
                 mt={"7px"}
+                isLoading={loading}
                 onClick={
                   !image || image === null || image === undefined
                     ? sendMessage
