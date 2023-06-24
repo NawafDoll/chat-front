@@ -47,7 +47,35 @@ function ScrollableChat({ messages }: any) {
                 }}
               >
                 {m.image !== undefined ? (
-                  <Image src={m.image.url} w={"130px"} h={"130px"} />
+                  m.image.url.includes(".mp4") ||
+                  m.image.url.includes(".MP4") ||
+                  m.image.url.includes(".mp3") ? (
+                    <video
+                      width={"130px"}
+                      height={"130px"}
+                      controls
+                      src={m.image.url}
+                    ></video>
+                  ) : m.image.url.includes(".png") ||
+                    m.image.url.includes(".jpeg") ||
+                    m.image.url.includes(".jpg") ? (
+                    <Image src={m.image.url} w={"130px"} h={"130px"} />
+                  ) : (
+                    <Box bg={"white"}>
+                      <iframe
+                        src={m.image.url}
+                        scrolling="no"
+                        style={{
+                          overflow: "hidden",
+                          width: "130px",
+                          height: "130px",
+                        }}
+                      />
+                      <a href={m.image.url} download target="_blank">
+                        <DownloadIcon color={"blue.500"} />
+                      </a>
+                    </Box>
+                  )
                 ) : (
                   <Text
                     borderRadius={`${
