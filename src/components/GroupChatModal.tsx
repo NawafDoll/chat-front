@@ -118,7 +118,7 @@ function GroupChatModal({ children }: any) {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Create Group Chat</ModalHeader>
+          <ModalHeader>أنشاء مجموعة</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <VStack spacing={2}>

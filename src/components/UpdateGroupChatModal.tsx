@@ -201,17 +201,25 @@ function UpdateGroupChatModal({
           <ModalCloseButton />
           <ModalBody>
             <Box>
-              {selectChat.users
-                .filter((e: any) => e._id !== user.id)
-                .map((us: any) => {
-                  return (
-                    <UserBadgeItem
-                      key={us._id}
-                      user={us}
-                      handleFun={() => handleRemove(us._id)}
-                    />
-                  );
-                })}
+              <Box
+                // h={"200px"}
+                overflowY={"auto"}
+                display={"flex"}
+                flexWrap={"wrap"}
+                justifyContent={"space-around"}
+              >
+                {selectChat.users
+                  .filter((e: any) => e._id !== user.id)
+                  .map((us: any) => {
+                    return (
+                      <UserBadgeItem
+                        key={us._id}
+                        user={us}
+                        handleFun={() => handleRemove(us._id)}
+                      />
+                    );
+                  })}
+              </Box>
               <FormControl display={"flex"} flexDir={"row"}>
                 <Input
                   placeholder="اسم المجموعة"
