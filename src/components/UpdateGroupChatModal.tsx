@@ -206,7 +206,7 @@ function UpdateGroupChatModal({
                 overflowY={"auto"}
                 display={"flex"}
                 flexWrap={"wrap"}
-                justifyContent={"space-around"}
+                justifyContent={"space-evenly"}
               >
                 {selectChat.users
                   .filter((e: any) => e._id !== user.id)
@@ -245,7 +245,7 @@ function UpdateGroupChatModal({
                 />
               </FormControl>
             </Box>
-            <Box>
+            <Box height={"150px"} overflowY={"auto"}>
               {renameLoading ? (
                 <Spinner />
               ) : (
