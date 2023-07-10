@@ -110,7 +110,7 @@ function GroupChatModal({ children }: any) {
     }
     setSelectUsers([...selectUsers, userToAdd]);
   };
-  //   console.log(groupChatName);
+
   return (
     <>
       <span onClick={onOpen}>{children}</span>
@@ -159,12 +159,10 @@ function GroupChatModal({ children }: any) {
                 searchRes.map((user: any) => {
                   return (
                     <Box
-                      // display={!user ? "block" : "hidden"}
                       display={"flex"}
                       alignItems={"center"}
                       borderRadius={"2xl"}
                       key={user._id}
-                      // borderColor={"gray"}
                       onClick={() => {
                         handleGroup(user);
                       }}

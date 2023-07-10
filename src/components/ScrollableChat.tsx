@@ -39,7 +39,6 @@ function ScrollableChat({ messages }: any) {
 
               <span
                 style={{
-                  // borderRadius: "20px",
                   padding: "5px 15px",
                   maxWidth: "75%",
                   marginLeft: isSameSenderMargin(messages, m, i, user.id),

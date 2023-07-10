@@ -10,7 +10,7 @@ function MyChats({ fetchAgain }: any) {
   const toast = useToast();
   const [logged, setLogged] = useState<any>();
   const { user, selectChat, setSelectChat, chats, setChats } = ChatState();
-  // console.log(chats);
+
   const fetchChat = async () => {
     try {
       const config = {
@@ -22,7 +22,7 @@ function MyChats({ fetchAgain }: any) {
         `https://chatback-api.onrender.com/chat`,
         config
       );
-      // console.log(data);
+
       setChats(data);
     } catch (err) {}
   };

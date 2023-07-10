@@ -5,7 +5,7 @@ import {
   useContext,
   useState,
 } from "react";
-// import {useHistory} from 'react-router-dom'
+
 export const ChatContext = createContext<any>(null);
 interface userData {
   pic: string;

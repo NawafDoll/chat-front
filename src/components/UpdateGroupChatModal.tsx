@@ -49,16 +49,6 @@ function UpdateGroupChatModal({
       });
       return;
     }
-    // if (selectChat.groupAdmin._id !== user.id) {
-    //   toast({
-    //     title: "ُمدير القروب فقط يستطيع الاضافة",
-    //     status: "error",
-    //     position: "bottom-left",
-    //     duration: 3000,
-    //     isClosable: true,
-    //   });
-    //   return;
-    // }
     try {
       setLoading(true);
       const config = {
@@ -81,16 +71,6 @@ function UpdateGroupChatModal({
   };
 
   const handleRemove = async (user1: any) => {
-    // if (selectChat.groupAdmin._id !== user.id && user1._id !== user.id) {
-    //   toast({
-    //     title: "ُمدير القروب فقط يستطيع الاضافة",
-    //     status: "error",
-    //     position: "bottom-left",
-    //     duration: 3000,
-    //     isClosable: true,
-    //   });
-    //   return;
-    // }
     try {
       setLoading(true);
       const config = {
@@ -173,7 +153,6 @@ function UpdateGroupChatModal({
       setSelectChat(data);
       setFetchAgain(!fetchAgain);
       setRenameLoading(false);
-      //   console.log("sss" + selectChat);
     } catch (err) {
       setRenameLoading(false);
     }
@@ -202,7 +181,6 @@ function UpdateGroupChatModal({
           <ModalBody>
             <Box>
               <Box
-                // h={"200px"}
                 overflowY={"auto"}
                 display={"flex"}
                 flexWrap={"wrap"}
@@ -253,12 +231,10 @@ function UpdateGroupChatModal({
                   {searchResult.map((us: any) => {
                     return (
                       <Box
-                        // display={!user ? "block" : "hidden"}
                         display={"flex"}
                         alignItems={"center"}
                         borderRadius={"2xl"}
                         key={us._id}
-                        // borderColor={"gray"}
                         onClick={() => {
                           handleAddUserToGroup(us._id);
                         }}

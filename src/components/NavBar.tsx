@@ -29,22 +29,15 @@ function NavBar(props: any) {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef<any>();
-  // React.useEffect(() => {
-  //   console.log(user);
-  // }, []);
 
   return (
     <Box
-      // className="nav"
       backgroundColor={"blackAlpha.800"}
       shadow={"dark-lg"}
       position={"relative"}
       zIndex={20000}
     >
       <Flex
-        //
-        // bg={useColorModeValue("blackAlpha.700", "gray.800")}
-        // color={useColorModeValue("gray.100", "white")}
         minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 5 }}
@@ -145,4 +138,4 @@ function NavBar(props: any) {
   );
 }
 
-export default NavBar;
+export default React.memo(NavBar);

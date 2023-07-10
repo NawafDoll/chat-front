@@ -6,7 +6,6 @@ function Background() {
     <>
       <div className="context">
         <Outlet />
-        {/* <h1>Hellosds</h1> */}
       </div>
 
       <div className="area">

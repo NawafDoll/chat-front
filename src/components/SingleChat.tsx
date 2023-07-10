@@ -87,7 +87,6 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
     });
   });
   const sendMessage = async (e: any) => {
-    // if (e.key === "Enter" && newMessage) {
     if (image === "" || newMessage === "") return;
     if (newMessage === "") return;
     socket.emit("stop typing", selectChat._id);
@@ -113,30 +112,23 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
 
   const inputFileRef: any = React.useRef();
   const onFileChangeCapture = (e: React.ChangeEvent<HTMLInputElement>) => {
-    /*Selected files data can be collected here.*/
     console.log(e.target.files);
   };
   const onBtnClick = (e: any) => {
     e.preventDefault();
-    /*Collecting node-element and performing click*/
+
     inputFileRef.current.click();
   };
 
   const inputRef: any = React.useRef();
-  // const onSubmit = (e: any) => {
-  //   e.preventDefault();
-  //   /*Collecting node-element and performing click*/
 
-  // };
   const selectFile = async (e: any) => {
     setLoadingFile(true);
     e.preventDefault();
-    // if('.mp4'||'.mp3'||)
     try {
       const config: any = {
         headers: {
           authorization: `Bearer ${localStorage.getItem("token")}`,
-          // "Content-type": "multipart/form-data",
         },
       };
 
@@ -317,9 +309,6 @@ function SingleChat({ fetchAgain, setFetchAgain }: any) {
                 <i className="fa fa-paper-plane" aria-hidden="true"></i>
               </Button>
             </HStack>
-            {/* <form onSubmit={selectFile} encType="multipart/form-data"> */}
-
-            {/* </form> */}
           </Box>
         </>
       ) : (
