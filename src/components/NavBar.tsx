@@ -138,4 +138,4 @@ function NavBar(props: any) {
   );
 }
 
-export default React.memo(NavBar);
+export default NavBar;
